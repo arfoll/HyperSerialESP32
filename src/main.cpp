@@ -75,6 +75,8 @@
 
 #ifdef SPILED_APA102
 	#define LED_DRIVER NeoPixelBus<DotStarBgrFeature, DotStarEsp32DmaHspiMethod>
+#elif SPILED_HD108
+	#define LED_DRIVER NeoPixelBus<Hd108RgbFeature, Hd108SpiMethod>
 #elif SPILED_WS2801
 	#define LED_DRIVER NeoPixelBus<NeoRbgFeature, NeoWs2801Spi2MhzMethod>
 #endif
