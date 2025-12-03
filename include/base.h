@@ -103,9 +103,9 @@ class Base
 						ledStrip2->Begin();
 					#else
 						ledStrip1 = new LED_DRIVER(SECOND_SEGMENT_START_INDEX);
-						ledStrip1->Begin(CLOCK_PIN, 12, DATA_PIN, 15);
+						ledStrip1->Begin(CLOCK_PIN, -1, DATA_PIN, -1);
 						ledStrip2 = new LED_DRIVER2(ledsNumber - SECOND_SEGMENT_START_INDEX);
-						ledStrip2->Begin(SECOND_SEGMENT_CLOCK_PIN, 12, SECOND_SEGMENT_DATA_PIN, 15);
+						ledStrip2->Begin(SECOND_SEGMENT_CLOCK_PIN, -1, SECOND_SEGMENT_DATA_PIN, -1);
 					#endif
 				}
 			#endif
@@ -117,7 +117,7 @@ class Base
 					ledStrip1->Begin();
 				#else
 					ledStrip1 = new LED_DRIVER(ledsNumber);
-					ledStrip1->Begin(CLOCK_PIN, 12, DATA_PIN, 15);
+					ledStrip1->Begin(CLOCK_PIN, -1, DATA_PIN, -1);
 				#endif
 			}
 		}

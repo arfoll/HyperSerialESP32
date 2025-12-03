@@ -76,9 +76,9 @@
 #ifdef SPILED_APA102
 	#define LED_DRIVER NeoPixelBus<DotStarBgrFeature, DotStarEsp32DmaHspiMethod>
 #elif SPILED_HD108
-	#define LED_DRIVER NeoPixelBus<Hd108RgbFeature, Hd108SpiMethod>
+	#define LED_DRIVER NeoPixelBus<Hd108RgbFeature, Hd108Esp32Vspi20MhzMethod>
 #elif SPILED_WS2801
-	#define LED_DRIVER NeoPixelBus<NeoRbgFeature, NeoWs2801Spi2MhzMethod>
+	#define LED_DRIVER NeoPixelBus<NeoRbgFeature, NeoWs2801spi20MhzMethod>
 #endif
 
 #pragma message(VAR_NAME_VALUE(DATA_PIN))
@@ -114,8 +114,10 @@
 			#endif
 		#elif SPILED_APA102
 			#define LED_DRIVER2 NeoPixelBus<DotStarBgrFeature, DotStarEsp32DmaHspiMethod>
+		#elif SPILED_HD108
+			#define LED_DRIVER2 NeoPixelBus<DotStarRgbFeature, Hd108Esp32Hspi20MhzMethod>
 		#elif SPILED_WS2801
-			#define LED_DRIVER2 NeoPixelBus<NeoRbgFeature, NeoWs2801Spi2MhzMethod>
+			#define LED_DRIVER2 NeoPixelBus<NeoRbgFeature, NeoWs2801spi20MhzMethod>
 		#endif
 	#else
 		#ifdef NEOPIXEL_RGBW
@@ -136,8 +138,10 @@
 			#endif
 		#elif SPILED_APA102
 			#define LED_DRIVER2 NeoPixelBus<DotStarBgrFeature, DotStarEsp32DmaVspiMethod>
+		#elif SPILED_HD108
+			#define LED_DRIVER2 NeoPixelBus<Hd108RgbFeature, Hd108Esp32Hspi20MhzMethod>
 		#elif SPILED_WS2801
-			#define LED_DRIVER2 NeoPixelBus<NeoRbgFeature, NeoWs2801Spi2MhzMethod>
+			#define LED_DRIVER2 NeoPixelBus<NeoRbgFeature, NeoWs2801spi20MhzMethod>
 		#endif
 	#endif
 	#pragma message(VAR_NAME_VALUE2(LED_DRIVER))
